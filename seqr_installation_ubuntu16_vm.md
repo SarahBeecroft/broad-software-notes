@@ -127,7 +127,7 @@ sudo -H pip install -r requirements.txt
 ```bash
 cd ${SEQR_INSTALL_DIR}/code/seqr
 # django command for initializing seqr database tables
-./manage.py migrate # Broke here
+./manage.py migrate
 
 # create a new django admin user
 ./manage.py createsuperuser
