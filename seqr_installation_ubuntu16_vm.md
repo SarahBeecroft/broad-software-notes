@@ -169,6 +169,8 @@ wget https://github.com/macarthur-lab/clinvar/blob/master/output/b37/single/clin
 wget https://github.com/macarthur-lab/clinvar/blob/master/output/b37/single/clinvar_alleles.single.b37.vcf.gz.tbi
 ```
 
+#used this script https://github.com/SarahBeecroft/seqr/blob/master/deploy/refDataDL.sh to download files from the offical seqr install instructions. this is an adaptation of install_general_dependencies.sh
+
 3. Add a new line to: `/seqr/code/seqr/deploy/utils/constants.py`
 ```python
 REFERENCE_DATA_FILES = {  # Line 79 of the script
