@@ -6,7 +6,7 @@ These notes are based off of the [official instructions for installing on a MacO
 
 1. Update and upgrade apt-get: 
 ```bash
-sudo apt-get update && sudo apt-get upgrade
+sudo apt-get update
 ```
 
 2. Install python 2.7: `sudo apt-get python`
@@ -82,18 +82,13 @@ psql -U postgres # Check connection with db, quit with ctr+D
 
 12. Installing the official Oracle Java Development kit 8 (JDK v1.8) for PhenoTips to work properly.  Don't get the java runtime enviornment (JRE), its not enough. Although you can also use the default-jdk.
 ```bash
-sudo apt-get update && apt-get upgrade
-sudo apt-get install software-properties-common
-sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
-sudo apt-get install oracle-java8-installer
-
-# OR
-sudo apt-get install default-jdk
-
-# This will **NOT** work:
-#sudo apt-get install default-jre
 ```
+
+needed to manually download from the oracle website because this version is too old for apt install
+
+
+
 
 11. Install PhenoTips for storing structured phenotype information. I installed it to the seqr home directory
 ```bash
@@ -108,7 +103,7 @@ cd phenotips-standalone-1.2.6
 
 12. Clone the seqr repo from github into the code directory and add the PYTHONPATH variable to .bash_profile
 ```bash
-cd ${SEQR_INSTALL_DIR}/code/seqr
+cd ${SEQR_INSTALL_DIR}/code
 git clone https://github.com/macarthur-lab/seqr.git
 
 # add these lines to .bash_profile
@@ -122,8 +117,12 @@ source .bash_profile
 12. Install seqr's python dependencies
 ```bash
 cd ${SEQR_INSTALL_DIR}/code/seqr
+sudo apt-get install python-psycopg2
+sudo apt-get install libpq-dev
+sudo apt remove python-psycopg2
 sudo -H pip install -r requirements.txt
 ```
+
 
 ### Part III. Initialize Seqr
 
