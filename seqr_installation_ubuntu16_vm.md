@@ -83,14 +83,11 @@ psql -U postgres # Check connection with db, quit with ctr+D
 12. Installing the official Oracle Java Development kit 8 (JDK v1.8) for PhenoTips to work properly.  Don't get the java runtime enviornment (JRE), its not enough. Although you can also use the default-jdk.
 ```bash
 sudo apt-get update
+sudo apt install openjdk-8-jre
 ```
 
-needed to manually download from the oracle website because this version is too old for apt install
 
-
-
-
-11. Install PhenoTips for storing structured phenotype information. I installed it to the seqr home directory
+13. Install PhenoTips for storing structured phenotype information. I installed it to the seqr home directory
 ```bash
 wget https://nexus.phenotips.org/nexus/content/repositories/releases/org/phenotips/phenotips-standalone/1.2.6/phenotips-standalone-1.2.6.zip
 # if its not installed
@@ -101,7 +98,7 @@ cd phenotips-standalone-1.2.6
 ./start.sh # run it
 ```
 
-12. Clone the seqr repo from github into the code directory and add the PYTHONPATH variable to .bash_profile
+14. Clone the seqr repo from github into the code directory and add the PYTHONPATH variable to .bash_profile
 ```bash
 cd ${SEQR_INSTALL_DIR}/code
 git clone https://github.com/macarthur-lab/seqr.git
@@ -114,7 +111,7 @@ export PYTHONPATH=${SEQR_INSTALL_DIR}/code/seqr/deploy/mac_osx/xbrowse_settings:
 source .bash_profile
 ```
 
-12. Install seqr's python dependencies
+15. Install seqr's python dependencies
 ```bash
 cd ${SEQR_INSTALL_DIR}/code/seqr
 sudo apt-get install python-psycopg2
